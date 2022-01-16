@@ -32,7 +32,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               backgroundImage: `url(${url})`,
             }}
           ></div>
-          <div style={{ margin: "5% 0 0 6%", color: "#253858" }}>
+          <div style={{ margin: "4% 0 0 6%", color: "#253858" }}>
             <div style={{ fontSize: "x-large", fontWeight: "bolder" }}>
               {name}
             </div>

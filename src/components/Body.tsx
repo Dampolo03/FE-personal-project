@@ -35,10 +35,8 @@ export const Body: React.FC<BodyProps> = ({ items, error, loading }) => {
                     setOpenModal(each.id);
                   }}
                 >
-                  <div style={{ fontSize: "x-large", marginLeft: "6%" }}>
-                    {each.user.name}
-                  </div>
-                  <div style={{ margin: "0 0 6% 6%" }}>
+                  <div className="display-card-name">{each.user.name}</div>
+                  <div className="display-card-location">
                     {each.user.location}
                   </div>
                 </div>
