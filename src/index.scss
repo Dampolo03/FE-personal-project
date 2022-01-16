@@ -158,8 +158,12 @@ body {
 }
 
 .profile-modal {
-  min-height: 50rem;
+  min-height: 40em;
   border-radius: 10px !important;
+
+  @include smallScreen {
+    min-height: 30em;
+  }
 }
 
 #profile-body {
@@ -170,7 +174,7 @@ body {
 
   & > :nth-child(1) {
     background-size: cover;
-    background-position: top center;
+    background-position: center;
     border-radius: 10px 10px 0 0;
     grid-row: span 7;
     grid-column: span 1;
@@ -180,5 +184,30 @@ body {
   & > :nth-child(2) {
     grid-row: 8/10;
     grid-column: span 1;
+  }
+}
+
+.display-card-name {
+  font-size: x-large;
+  margin-left: 6%;
+
+  @include mediumScreen {
+    font-size: 80%;
+  }
+
+  @include smallScreen {
+    font-size: 80%;
+  }
+}
+
+.display-card-location {
+  margin: 0 0 6% 6%;
+
+  @include mediumScreen {
+    font-size: 60%;
+  }
+
+  @include smallScreen {
+    font-size: 60%;
   }
 }
