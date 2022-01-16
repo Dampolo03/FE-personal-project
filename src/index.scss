@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
+@mixin mediumScreen {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin smallScreen {
+  @media (max-width: 768.9px) {
+    @content;
+  }
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+body {
+  margin: 0 !important;
+}
+
+.all-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  height: 100%;
+  padding: 0 20% 3%;
+  position: absolute;
+  width: 100%;
+  top: 17%;
+  grid-auto-flow: column;
+
+  & > :nth-child(3n + 1) {
+    grid-row: span 5;
+    grid-column: 1/2;
+  }
+  & > :nth-child(3n + 2) {
+    grid-row: span 5;
+    grid-column: 2/3;
+  }
+  & > :nth-child(3n + 3) {
+    grid-row: span 5;
+    grid-column: 3/4;
+  }
+  & > :nth-child(1) {
+    grid-row: span 4;
+    grid-column: 1/2;
+  }
+  & > :nth-child(2) {
+    grid-row: span 6;
+    grid-column: 2/3;
+  }
+  & > :nth-child(3) {
+    grid-row: span 5;
+    grid-column: 3/4;
+  }
+
+  @include mediumScreen {
+    padding: 0 15% 3%;
+  }
+
+  @include smallScreen {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15% 3%;
+
+    & > :nth-child(2n + 1) {
+      grid-row: span 5;
+      grid-column: 1/2;
+    }
+    & > :nth-child(2n + 2) {
+      grid-row: span 5;
+      grid-column: 2/3;
+    }
+    & > :nth-child(1) {
+      grid-row: span 4;
+      grid-column: 1/2;
+    }
+    & > :nth-child(2) {
+      grid-row: span 6;
+      grid-column: 2/3;
+    }
+    & > :nth-child(3) {
+      grid-row: span 5;
+      grid-column: 1/2;
+    }
+  }
+}
+
+.api-error {
+  position: relative;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.results {
+  position: relative;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  font-size: xx-large;
+  margin: auto 10%;
+  color: #253858;
+}
+
+.display-card {
+  background-size: cover;
+  background-position: top center;
+  background-color: lightgrey;
+  background-blend-mode: multiply;
+  border-radius: 5%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &:hover {
+    background-blend-mode: none;
+    background-color: unset;
+    cursor: pointer;
+  }
+}
+
+.placeholder-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #f5f5f5;
+  border-radius: 5%;
+
+  & > :nth-child(1) {
+    background-color: #e6e6e6;
+    margin: 0 0 2% 6%;
+    border: 0.3rem solid #e6e6e6;
+    width: 50%;
+  }
+
+  & > :nth-child(2) {
+    background-color: #e6e6e6;
+    margin: 0 0 6% 6%;
+    border: 0.3rem solid #e6e6e6;
+    width: 40%;
+  }
+}
+
+.profile-modal {
+  min-height: 50rem;
+  border-radius: 10px !important;
+}
+
+#profile-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  padding: 0 !important;
+
+  & > :nth-child(1) {
+    background-size: cover;
+    background-position: top center;
+    border-radius: 10px 10px 0 0;
+    grid-row: span 7;
+    grid-column: span 1;
+    overflow: hidden;
+  }
+
+  & > :nth-child(2) {
+    grid-row: 8/10;
+    grid-column: span 1;
+  }
+}
